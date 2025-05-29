@@ -53,6 +53,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandbox", "sandbox\Sandbox\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCounter", "WordCounter\WordCounter.csproj", "{3DF30393-3335-44B6-AA94-C80E10FC37F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSE210TestApp2", "CSE210TestApp2\CSE210TestApp2.csproj", "{67F68E35-2072-47CC-91B3-4207735DA8D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -139,6 +141,10 @@ Global
 		{3DF30393-3335-44B6-AA94-C80E10FC37F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DF30393-3335-44B6-AA94-C80E10FC37F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DF30393-3335-44B6-AA94-C80E10FC37F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67F68E35-2072-47CC-91B3-4207735DA8D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67F68E35-2072-47CC-91B3-4207735DA8D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67F68E35-2072-47CC-91B3-4207735DA8D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67F68E35-2072-47CC-91B3-4207735DA8D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
