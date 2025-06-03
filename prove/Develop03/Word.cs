@@ -5,33 +5,25 @@ class Word
 {
 
     private string _word;
+    private bool _isHidden;
 
-    public Word()
+    public Word(string scripture)
     {
-
+        _word = scripture;
+        _isHidden = false;
+    }
+    public void Hide() //may be unessisary
+    {
+        _isHidden = true;
     }
 
-    public Word(string scripture) {
-        scripture.Split("#");
+    public bool IsHidden() // may be unessisary
+    {
+        return _isHidden;
     }
 
-    private bool IsHiddenLetter(string check)
+    public string GiveWord()
     {
-        if (check == "_")
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    private void HideLetters(string word)
-    {
-        string divWord = word.Split();
-        divWord.Count();
-        
-        
+        return _word;
     }
 }

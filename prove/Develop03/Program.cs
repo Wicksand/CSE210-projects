@@ -1,21 +1,44 @@
 using System;
+using System.Security;
 
 class Program
 {
-     private List<Passage> _scriptures = new List<Passage>
-     {
-        new Passage("Mosiah#2#17#And behold, I tell you these things that ye may learn wisdom; that ye may learn that when ye are in the service of your fellow beings ye are only in the service of your God."),
-        new Passage("Proverbs#3#5-6#Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths."),
-        new Passage("Moroni#7#33-34And Christ hath said: If ye will have faith in me ye shall have power to do whatsoever thing is expedient in me. And he hath said: Repent all ye ends of the earth, and come unto me, and be baptized in my name, and have faith in me, that ye may be saved.")
-     };
-
     static void Main(string[] args)
     {
-        string userInput = null;
+        Passage myPassage = new Passage("");
+        string scriptureChoice = myPassage.PickRandom();
+
+        myPassage = new Passage(scriptureChoice);
+
+        Reference reference;
+        if (myPassage.VerseEnd == "")
+        {
+            reference = new Reference(myPassage.Book, myPassage.Chapter, myPassage.VerseStart, myPassage);
+        }
+        else
+        {
+            reference =new Reference(myPassage.Book, myPassage.Chapter, myPassage.VerseStart, myPassage.VerseEnd, myPassage);
+        }
+        string userInput = "";
+
         while (userInput != "q")
         {
+            Console.Clear();
+            reference.Display();
+
+            if (myPassage.AllWordsHidden())
+            {
+                break;
+            }
+
             Console.WriteLine("press enter to continue or 'q' to finish");
-            userInput = Console.ReadLine();
+            userInput = Console.ReadLine().ToLower();
+
+            if (userInput == "q")
+            {
+                break;
+            }
+            myPassage.HideRandomWords(3);
         }
     }
 }
