@@ -12,12 +12,12 @@ class Word
         _word = scripture;
         _isHidden = false;
     }
-    public void Hide() //may be unessisary
+    public void Hide() 
     {
         _isHidden = true;
     }
 
-    public bool IsHidden() // may be unessisary
+    public bool IsHidden()
     {
         return _isHidden;
     }

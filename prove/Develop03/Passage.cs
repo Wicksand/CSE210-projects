@@ -13,8 +13,6 @@ class Passage
 
     private static Random _random = new Random();
 
-    private string _scripture;
-
     private List<string> _scriptures = new List<string>
     {
         "Mosiah#2#17#And behold, I tell you these things that ye may learn wisdom; that ye may learn that when ye are in the service of your fellow beings ye are only in the service of your God.",
