@@ -89,21 +89,21 @@ class Passage
         }
     }
 
-    public string GetPassage()
-    {
-        string passageTxt = "";
+    // public string GetPassage()
+    // {
+    //     string passageTxt = "";
 
-        for (int count = 0; count < _words.Count; count++)
-        {
-            passageTxt += _words[count].GiveWord();
+    //     for (int count = 0; count < _words.Count; count++)
+    //     {
+    //         passageTxt += _words[count].GiveWord();
 
-            if (count < _words.Count - 1)
-            {
-                passageTxt += " ";
-            }
-        }
-        return passageTxt;
-    }
+    //         if (count < _words.Count - 1)
+    //         {
+    //             passageTxt += " ";
+    //         }
+    //     }
+    //     return passageTxt;
+    // }
     // public string PickRandom()
     // {
     //     private Random _random = new Random();
@@ -130,7 +130,7 @@ class Passage
 
         foreach (Word word in _words)
         {
-            Console.Write(word.GiveWord());
+            Console.Write($"{word.GiveWord()} ");
         }
     }
 }

@@ -24,6 +24,18 @@ class Word
 
     public string GiveWord()
     {
-        return _word;
+        if (IsHidden())
+        {
+            string returnValue = "";
+            for (int i = 0; i < _word.Length; i++)
+            {
+                returnValue += "_";
+            }
+            return returnValue;
+        }
+        else
+        {
+            return _word;
+        }
     }
 }
