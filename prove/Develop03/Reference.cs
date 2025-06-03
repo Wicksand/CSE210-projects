@@ -5,37 +5,35 @@ using System.Runtime.CompilerServices;
 class Reference
 {
     private string _book;
-    private string _chapter;
-    private string _verseSt;
-    private string _verseEnd;
-    private Passage _passage;
+    private int _chapter;
+    private int _verseSt;
+    private int _verseEnd;
 
-    public Reference(string book, string chapter, string verseSt, Passage passage)
+    public Reference(string book, int chapter, int verseSt)
     {
         _book = book;
         _chapter = chapter;
         _verseSt = verseSt;
-        _verseEnd = "";
-        _passage = passage;
+        _verseEnd = -1;
+
     }
-    public Reference(string book, string chapter, string verseSt, string verseEnd, Passage passage)
+    public Reference(string book, int chapter, int verseSt, int verseEnd)
     {
         _book = book;
         _chapter = chapter;
         _verseSt = verseSt;
         _verseEnd = verseEnd;
-        _passage = passage;
     }
 
     public void Display()
     {
-        Console.WriteLine($"{GetReference()} {_passage.GetPassage()}");
+        Console.WriteLine($"{GetReference()}");
     }
 
     public string GetReference()
     {
 
-        if (_verseEnd == "")
+        if (_verseEnd == -1)
         {
             string reference = $"{_book} {_chapter}: {_verseSt}";
             return reference;

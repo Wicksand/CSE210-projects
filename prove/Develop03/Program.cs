@@ -5,26 +5,26 @@ class Program
 {
     static void Main(string[] args)
     {
-        Passage myPassage = new Passage("");
-        string scriptureChoice = myPassage.PickRandom();
+        Passage myPassage = new Passage();
+        // string scriptureChoice = myPassage.PickRandom();
 
-        myPassage = new Passage(scriptureChoice);
+        // myPassage = new Passage(scriptureChoice);
 
-        Reference reference;
-        if (myPassage.VerseEnd == "")
-        {
-            reference = new Reference(myPassage.Book, myPassage.Chapter, myPassage.VerseStart, myPassage);
-        }
-        else
-        {
-            reference =new Reference(myPassage.Book, myPassage.Chapter, myPassage.VerseStart, myPassage.VerseEnd, myPassage);
-        }
+        // Reference reference;
+        // if (myPassage.VerseEnd == "")
+        // {
+        //     reference = new Reference(myPassage.Book, myPassage.Chapter, myPassage.VerseStart, myPassage);
+        // }
+        // else
+        // {
+        //     reference =new Reference(myPassage.Book, myPassage.Chapter, myPassage.VerseStart, myPassage.VerseEnd, myPassage);
+        // }
         string userInput = "";
 
         while (userInput != "q")
         {
             Console.Clear();
-            reference.Display();
+            myPassage.Displayscript();
 
             if (myPassage.AllWordsHidden())
             {
