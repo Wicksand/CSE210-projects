@@ -6,39 +6,26 @@ class Program
     static void Main(string[] args)
     {
         Passage myPassage = new Passage();
-        // string scriptureChoice = myPassage.PickRandom();
 
-        // myPassage = new Passage(scriptureChoice);
-
-        // Reference reference;
-        // if (myPassage.VerseEnd == "")
-        // {
-        //     reference = new Reference(myPassage.Book, myPassage.Chapter, myPassage.VerseStart, myPassage);
-        // }
-        // else
-        // {
-        //     reference =new Reference(myPassage.Book, myPassage.Chapter, myPassage.VerseStart, myPassage.VerseEnd, myPassage);
-        // }
         string userInput = "";
+        bool done = false;
+        Console.Clear();
+        myPassage.Displayscript();
 
-        while (userInput != "q")
+        while (userInput != "q" && !done)
         {
-            Console.Clear();
-            myPassage.Displayscript();
 
             if (myPassage.AllWordsHidden())
             {
-                break;
+                done = true;
             }
 
             Console.WriteLine("press enter to continue or 'q' to finish");
             userInput = Console.ReadLine().ToLower();
 
-            if (userInput == "q")
-            {
-                break;
-            }
             myPassage.HideRandomWords(3);
+            Console.Clear();
+            myPassage.Displayscript();
         }
     }
 }
