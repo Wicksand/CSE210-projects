@@ -14,13 +14,11 @@ class Program
 
         while (userInput != "q" && !done)
         {
-
             if (myPassage.AllWordsHidden())
             {
                 done = true;
             }
-
-            Console.WriteLine("press enter to continue or 'q' to finish");
+            Console.WriteLine("\nPress enter to continue or 'q' to finish");
             userInput = Console.ReadLine().ToLower();
 
             myPassage.HideRandomWords(3);
