@@ -1,4 +1,6 @@
-﻿class Program
+﻿using System.Reflection.Metadata;
+
+class Program
 {
     public static void Main(string[] args)
     {
@@ -7,6 +9,12 @@
 
         PoliceMan myPoliceman = new PoliceMan("Cooper", "Silver", 34, "club");
         Console.WriteLine(myPoliceman.GetPersonInformation());
+        Console.WriteLine(myPoliceman.GetPoliceManInformation());
+
+        Doctor myDoctor = new Doctor("Bob", "Pain", 56, "Hammer");
+        Console.WriteLine(myDoctor.GetDoctorInformation());
+
+
     }  
 }
 
