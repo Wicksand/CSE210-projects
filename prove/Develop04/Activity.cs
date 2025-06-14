@@ -72,18 +72,13 @@ class Activity
 
         int index = 0;
         string animationString = "|/-|-\\";
-
+        
         while (DateTime.Now < endTime)
         {
-            while (DateTime.Now < endTime)
-            {
-                Console.Write(animationString[index++ % animationString.Length]);
-                Thread.Sleep(500);
-                Console.Write("\b");
-            }
-            Console.Write(" ");
-
+            Console.Write(animationString[index++ % animationString.Length]);
+            Thread.Sleep(500);
+            Console.Write("\b");
         }
-
+        Console.Write(" ");
     }
 }
