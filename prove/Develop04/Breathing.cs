@@ -5,6 +5,7 @@ class Breathing : Activity
     {
         DisplayWelcome();
         SetTime();
+        DisplayGoodbye();
     }
     public void RunBreath()
     {
