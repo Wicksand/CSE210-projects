@@ -20,8 +20,9 @@ class Breathing : Activity
         {
             Console.Write("\nBreathe in...");
             Timer(6);
-            Console.Write("\nBreathe out...");
+            Console.Write("\nNow breathe out...");
             Timer(6);
+            Console.WriteLine();
         }
     }
 }
