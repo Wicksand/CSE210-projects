@@ -7,21 +7,22 @@ class Breathing : Activity
         SetTime();
         RunBreath();
         DisplayGoodbye();
+        Console.Clear();
     }
     public void RunBreath()
     {
         Console.Clear();
         Console.WriteLine("Get ready...");
-        Spinner(5);
+        Spinner(4);
 
         DateTime endTime = DateTime.Now.AddSeconds(GetTime());
 
         while (DateTime.Now < endTime)
         {
             Console.Write("\nBreathe in...");
-            Timer(6);
+            Timer(4);
             Console.Write("\nNow breathe out...");
-            Timer(6);
+            Timer(4);
             Console.WriteLine();
         }
     }

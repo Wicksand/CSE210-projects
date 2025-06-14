@@ -44,7 +44,9 @@ class Activity
     protected void DisplayGoodbye()
     {
         Console.WriteLine("\nWell Done!!");
+        Spinner(4);
         Console.WriteLine($"\nYou have completed another {_timeLen} seconds of the {_name} Activity.");
+        Spinner(4);
 
     }
 
@@ -61,6 +63,7 @@ class Activity
                 Console.Write("\b");
             }
         }
+        Console.Write(" ");
     }
     public void Spinner(int sec)
     {
@@ -78,8 +81,7 @@ class Activity
                 Thread.Sleep(500);
                 Console.Write("\b");
             }
-            Console.Write("\b");
-
+            Console.Write(" ");
 
         }
 
