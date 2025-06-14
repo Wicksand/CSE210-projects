@@ -7,13 +7,10 @@ class Breathing : Activity
         SetTime();
         RunBreath();
         DisplayGoodbye();
-        Console.Clear();
     }
     public void RunBreath()
     {
-        Console.Clear();
-        Console.WriteLine("Get ready...");
-        Spinner(4);
+        GetReady();
 
         DateTime endTime = DateTime.Now.AddSeconds(GetTime());
 

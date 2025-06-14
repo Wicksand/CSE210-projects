@@ -4,6 +4,7 @@ class Reflection : Activity
     {
         DisplayWelcome();
         SetTime();
+        GetReady();
         DisplayGoodbye();
     }
 }

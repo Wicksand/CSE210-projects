@@ -40,6 +40,12 @@ class Activity
     {
         Console.WriteLine($"Welcome to the {_name} Activity\n\n{_description}\n");
     }
+    protected void GetReady()
+    {
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        Spinner(3);
+    }
 
     protected void DisplayGoodbye()
     {
@@ -47,6 +53,7 @@ class Activity
         Spinner(4);
         Console.WriteLine($"\nYou have completed another {_timeLen} seconds of the {_name} Activity.");
         Spinner(4);
+        Console.Clear();
 
     }
 
