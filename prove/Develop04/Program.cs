@@ -13,7 +13,7 @@ class Program
     }
     private static int DisplayMenu()
     {
-        Console.WriteLine("Menu Options:\n  1. Breathing Activity\n  2. Reflection Activity\n  3. Listing Activity\n  44. Quit");
+        Console.WriteLine("Menu Options:\n  1. Breathing Activity\n  2. Reflection Activity\n  3. Listing Activity\n  4. Quit");
         Console.WriteLine("Pick your activity.");
         string read = Console.ReadLine();
         if (!int.TryParse(read, out int input))
@@ -25,20 +25,19 @@ class Program
         // int input = int.Parse(Console.ReadLine());
         switch (input)
         {
-            case 1:
+            case 1: //Breathing Activity
                 Console.Clear();
-                Console.WriteLine("case1");
-
+                Breathing breathing = new Breathing();
                 break;
-            case 2:
-                Console.Clear();
-
-                break;
-            case 3:
+            case 2:  //Reflection Activity
                 Console.Clear();
 
                 break;
-            case 4:
+            case 3:  //Listing Activity
+                Console.Clear();
+
+                break;
+            case 4:  //Quit Program
                 Console.Clear();
 
                 break;
