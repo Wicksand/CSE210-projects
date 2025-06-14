@@ -1,5 +1,7 @@
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Globalization;
 
 class Activity
 {
@@ -39,6 +41,42 @@ class Activity
     {
         Console.WriteLine("\nWell Done!!");
         Console.WriteLine($"\nYou have completed another {_timeLen} seconds of the {_name} Activity.");
+
+    }
+
+    public void timer(int seconds)
+    {
+        for (int i = seconds; i > 0; i--)
+        {
+            string secondst = seconds.ToString();
+            Console.Write(secondst);
+            Thread.Sleep(1000);
+
+            for (int j = 0; j < secondst.Length; j++)
+            {
+                Console.WriteLine("\b");
+            }
+        }
+    }
+    public void Spinner(int sec)
+    {
+        DateTime currentTime = DateTime.Now;
+        DateTime endTime = currentTime.AddSeconds(sec);
+
+        int index = 0;
+        string animationString = "|/-|-\\";
+
+        while (DateTime.Now < endTime)
+        {
+            while (DateTime.Now < endTime)
+        {
+            Console.Write(animationString[index++ % animationString.Length]);
+            Thread.Sleep(500);
+            Console.Write("\b");
+        }
+            
+        
+        }
 
     }
 }

@@ -5,10 +5,13 @@ class Breathing : Activity
     {
         DisplayWelcome();
         SetTime();
+        RunBreath();
         DisplayGoodbye();
     }
     public void RunBreath()
     {
-        
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        Spinner(5);
     }
 }
