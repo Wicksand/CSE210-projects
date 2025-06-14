@@ -10,11 +10,11 @@ class Activity
     {
 
     }
-    public Activity(string name, string description, int timeLen)
+    public Activity(string name, string description)
     {
         _name = name;
         _description = description;
-        _timeLen = timeLen;
+
     }
 
     protected void DisplayWelcome()

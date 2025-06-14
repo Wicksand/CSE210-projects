@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Reflection;
 
 class Program
 {
@@ -31,10 +32,11 @@ class Program
                 break;
             case 2:  //Reflection Activity
                 Console.Clear();
-
+                Reflection reflection = new Reflection();
                 break;
             case 3:  //Listing Activity
                 Console.Clear();
+                Listing listing = new Listing();
 
                 break;
             case 4:  //Quit Program
