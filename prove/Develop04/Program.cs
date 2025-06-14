@@ -13,7 +13,7 @@ class Program
     }
     private static int DisplayMenu()
     {
-        Console.WriteLine("1. Breathing Activity\n2. Reflection Activity\n3. Listing Activity\n4. Quit");
+        Console.WriteLine("Menu Options:\n  1. Breathing Activity\n  2. Reflection Activity\n  3. Listing Activity\n  44. Quit");
         Console.WriteLine("Pick your activity.");
         string read = Console.ReadLine();
         if (!int.TryParse(read, out int input))
