@@ -31,6 +31,10 @@ class Activity
         }
         _timeLen = timeLen;
     }
+    public int GetTime()
+    {
+        return _timeLen;
+    }
 
     protected void DisplayWelcome()
     {
@@ -44,17 +48,17 @@ class Activity
 
     }
 
-    public void timer(int seconds)
+    public void Timer(int seconds)
     {
         for (int i = seconds; i > 0; i--)
         {
             string secondst = seconds.ToString();
-            Console.Write(secondst);
+            Console.Write(i);
             Thread.Sleep(1000);
 
             for (int j = 0; j < secondst.Length; j++)
             {
-                Console.WriteLine("\b");
+                Console.Write("\b");
             }
         }
     }
@@ -69,13 +73,13 @@ class Activity
         while (DateTime.Now < endTime)
         {
             while (DateTime.Now < endTime)
-        {
-            Console.Write(animationString[index++ % animationString.Length]);
-            Thread.Sleep(500);
-            Console.Write("\b");
-        }
-            
-        
+            {
+                Console.Write(animationString[index++ % animationString.Length]);
+                Thread.Sleep(500);
+                Console.Write("\b");
+            }
+
+
         }
 
     }

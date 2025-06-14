@@ -13,5 +13,15 @@ class Breathing : Activity
         Console.Clear();
         Console.WriteLine("Get ready...");
         Spinner(5);
+
+        DateTime endTime = DateTime.Now.AddSeconds(GetTime());
+
+        while (DateTime.Now < endTime)
+        {
+            Console.Write("\nBreathe in...");
+            Timer(6);
+            Console.Write("\nBreathe out...");
+            Timer(6);
+        }
     }
 }
