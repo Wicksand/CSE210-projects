@@ -6,6 +6,8 @@ class Reflection : Activity
     {
         DisplayWelcome();
         SetTime();
+        GetReady();
+        Console.WriteLine("\nConsider the following prompt:\n");
         DisplayRandomPrompt();
         Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
         Console.ReadLine();
@@ -27,14 +29,14 @@ class Reflection : Activity
     private void DisplayRandomFollowQuestion()
     {
          List<string> followQuestions = new List<string>();
-        followQuestions.Add("Why was this experience meaningful to you?");
-        followQuestions.Add("Have you ever done anything like this before?");
-        followQuestions.Add("How did you get started?");
-        followQuestions.Add("What made this time different than other times when you were not as successful?");
-        followQuestions.Add("What is your favorite thing about this experience?");
-        followQuestions.Add("What could you learn from this experience that applies to other situations?");
-        followQuestions.Add("What did you learn about yourself through this experience?");
-        followQuestions.Add("How can you keep this experience in mind in the future?");
+        followQuestions.Add("> Why was this experience meaningful to you?");
+        followQuestions.Add("> Have you ever done anything like this before?");
+        followQuestions.Add("> How did you get started?");
+        followQuestions.Add("> What made this time different than other times when you were not as successful?");
+        followQuestions.Add("> What is your favorite thing about this experience?");
+        followQuestions.Add("> What could you learn from this experience that applies to other situations?");
+        followQuestions.Add("> What did you learn about yourself through this experience?");
+        followQuestions.Add("> How can you keep this experience in mind in the future?");
 
         Random rand = new Random();
         int _randNum = rand.Next(followQuestions.Count);
@@ -50,7 +52,7 @@ class Reflection : Activity
         while (DateTime.Now < endTime)
         {
             DisplayRandomFollowQuestion();
-            Spinner(5);
+            Spinner(6);
         }
     }
 }
