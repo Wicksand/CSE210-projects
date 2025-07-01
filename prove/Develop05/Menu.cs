@@ -24,7 +24,7 @@ class Menu
         if (!int.TryParse(read, out int menuVal))
         {
             Console.Clear();
-            Console.WriteLine("\n--------------------------------------------------------------------\nInvalid input, Please enter a number 1-\n--------------------------------------------------------------------\n");
+            Console.WriteLine("\n--------------------------------------------------------------------\nInvalid input, Please enter a number 1-6\n--------------------------------------------------------------------\n");
             return 0;
         }
         // int input = int.Parse(Console.ReadLine());
@@ -53,7 +53,7 @@ class Menu
                 break;
             default:
                 Console.Clear();
-                Console.WriteLine("\n--------------------------------------------------------------------\nInvalid input, Please enter a number 1-4\n--------------------------------------------------------------------\n");
+                Console.WriteLine("\n--------------------------------------------------------------------\nInvalid input, Please enter a number 1-6\n--------------------------------------------------------------------\n");
                 break;
         }
          return menuVal;
