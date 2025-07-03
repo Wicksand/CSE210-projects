@@ -16,7 +16,7 @@ class Menu
     }
     private int DisplayMenu()
     {
-        Console.Clear();
+        
         Console.WriteLine($"\n\nYou have {_score} points\n");
         Console.WriteLine("Menu Options:\n  1.  Create New Goal\n  2.  List Goals\n  3.  Save Goals\n  4.  Save Goals\n  5.  Record Event\n  6.  Quit");
         Console.Write("Select a choice from the menu: ");
@@ -72,7 +72,6 @@ class Menu
             if (!int.TryParse(read, out int goalType))
             {
                 Console.WriteLine("\n--------------------------------------------------------------------\nInvalid input, Please enter a number 1-3\n--------------------------------------------------------------------\n");
-
             }
             else
             {
