@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
 using System.Reflection;
+using Microsoft.VisualBasic;
 
 class Menu
 {
@@ -18,7 +19,7 @@ class Menu
     {
         
         Console.WriteLine($"\n\nYou have {_score} points\n");
-        Console.WriteLine("Menu Options:\n  1.  Create New Goal\n  2.  List Goals\n  3.  Save Goals\n  4.  Save Goals\n  5.  Record Event\n  6.  Quit");
+        Console.WriteLine("Menu Options:\n  1.  Create New Goal\n  2.  List Goals\n  3.  Save Goals\n  4.  Load Goals\n  5.  Record Event\n  6.  Quit");
         Console.Write("Select a choice from the menu: ");
 
 
@@ -32,24 +33,24 @@ class Menu
         // int input = int.Parse(Console.ReadLine());
         switch (menuVal)
         {
-            case 1:
+            case 1: // make a goal
                 DisplayGoalMenu();
                 break;
-            case 2:
+            case 2: // list goals
                 Console.WriteLine("It worked");
                 break;
-            case 3:
+            case 3:// save goals
                 Console.WriteLine("It worked");
                 break;
-            case 4:
-                Console.WriteLine("It worked");
-
-                break;
-            case 5:
+            case 4: // load goals
                 Console.WriteLine("It worked");
 
                 break;
-            case 6:
+            case 5: // record event
+                Console.WriteLine("It worked");
+
+                break;
+            case 6: //quit
 
                 break;
             default:
@@ -78,13 +79,20 @@ class Menu
                 switch (goalType)
                 {
 
-                    case 1:
+                    case 1: // simple
+                        Goal myGoal = new Goal();
+                        Console.Write("What is the name of your Goal?");
+                        string name = Console.ReadLine();
+                        Console.Write("What is a short description of it?");
+                        string description = Console.ReadLine();
+                        myGoal.GetPoints();
+
                         waiting = false;
                         break;
-                    case 2:
+                    case 2: // eternal
                         waiting = false;
                         break;
-                    case 3:
+                    case 3: // checklist
                         waiting = false;
                         break;
                     default:

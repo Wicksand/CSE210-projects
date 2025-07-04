@@ -1,8 +1,16 @@
 class SimpleGoal : BaseGoal
 {
-    public override void RecordEvent()
+    public SimpleGoal()
     {
         
+    }
+    public SimpleGoal(string name, int points, bool status)
+    {
+        
+    }
+    public override void RecordEvent()
+    {
+
     }
     public override string SetGoal()
     {
