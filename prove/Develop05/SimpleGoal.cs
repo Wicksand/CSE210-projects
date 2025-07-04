@@ -10,6 +10,11 @@ class SimpleGoal : BaseGoal
         SetDescription();
         setPoints();
     }
+    public SimpleGoal(string name, string desc, int point, bool status)
+    {
+        SetGoal(name, desc, point, status);
+        SetType("simple");
+    }
     public override int RecordEvent()
     {
         if (!GetStatus())
@@ -23,13 +28,5 @@ class SimpleGoal : BaseGoal
             Console.WriteLine($"That goal has already been compleated.");
             return 0;
         }
-    }
-    public override string SetGoal()
-    {
-        return $"{GetType()}#{GetName()}#{GetDescription()}#{GetPoints()}#{GetStatus()}";
-    }
-    public override void GetGoal()
-    {
-        
     }
 }

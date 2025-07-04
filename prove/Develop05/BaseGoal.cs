@@ -39,6 +39,10 @@ abstract class BaseGoal
         }
         _points = points;
     }
+    public void LoadPoints(int points)
+    {
+        _points = points;
+    }
     public int GetPoints()
     {
         return _points;
@@ -48,6 +52,10 @@ abstract class BaseGoal
         Console.Write("What is a short description of it? ");
         _description = Console.ReadLine();
     }
+     public void LoadDescription(string input)
+    {
+        _description = input;
+    }
     public string GetDescription()
     {
         return _description;
@@ -56,6 +64,10 @@ abstract class BaseGoal
     {
         Console.Write("What is the name of your Goal? ");
         _name = Console.ReadLine();
+    }
+    public void LoadName(string name)
+    {
+        _name = name;
     }
     public string GetName()
     {
@@ -78,19 +90,17 @@ abstract class BaseGoal
         return _type;
     }
     //------------------------------------------------------------------------------------------------------------
-
-    public virtual string ConvertToTextScreen()
-    {
-        return $"";
-    }
-
     public virtual string ConvertToTextFile()
     {
         return $"{GetType()}#{GetName()}#{GetDescription()}#{GetPoints()}#{GetStatus()}";
     }
     public abstract int RecordEvent();
 
-    public abstract string SetGoal();
-
-    public abstract void GetGoal();
+    public void SetGoal(string name, string desc, int point, bool status)
+    {
+        SetStatus(status);
+        LoadName(name);
+        LoadDescription(desc);
+        LoadPoints(point);
+    }
 }

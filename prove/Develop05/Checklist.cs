@@ -80,12 +80,19 @@ class Checklist : BaseGoal
         }
 
     }
-    public override string SetGoal(){
-        return"";
+    public override string ConvertToTextFile()
+    {
+        return $"{GetType()}#{GetName()}#{GetDescription()}#{GetPoints()}#{GetStatus()}#{_taskCount}#{_TaskGoal}#{_taskReward}";
     }
 
-    public override void GetGoal()
+    public Checklist(string name, string desc, int point, bool status, int taskCount, int taskGoal, int reward)
     {
+        SetGoal(name, desc, point, status);
+        SetType("checklist");
+         _taskCount = taskCount;
+        _TaskGoal = taskGoal;
+        _taskReward = reward;
         
+
     }
 }

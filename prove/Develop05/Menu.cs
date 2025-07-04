@@ -39,10 +39,10 @@ class Menu
                 myGoals.DisplayGoals();
                 break;
             case 3:// save goals
-                Console.WriteLine("It worked");
+                myGoals.SaveGoals();
                 break;
             case 4: // load goals
-                Console.WriteLine("It worked");
+                myGoals.LoadGoals();
 
                 break;
             case 5: // record event

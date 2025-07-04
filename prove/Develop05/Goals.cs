@@ -7,7 +7,7 @@ class Goals
     private string _filename;
     private List<BaseGoal> goals = new List<BaseGoal>();
 
-     private int _pointsTotal = 0;
+    private int _pointsTotal = 0;
 
     public Goals()
     {
@@ -43,8 +43,61 @@ class Goals
             count++;
         }
     }
+    public void SaveGoals()
+    {
+        GetFileName();
+        using (StreamWriter writer = new StreamWriter(_filename))
+        {
+            writer.WriteLine(_pointsTotal);
+            foreach (BaseGoal goal in goals)
+            {
+                writer.WriteLine(goal.ConvertToTextFile());
+            }
+            
+        }
+    }
     public void LoadGoals()
     {
+        GetFileName();
+        if (!File.Exists(_filename))
+        {
+            Console.WriteLine("\n--------------------------------------------------------------------\nFile not found\n--------------------------------------------------------------------\n");
+            return;
+        }
+        else
+        {
+            string[] lines = File.ReadAllLines(_filename);
+            goals.Clear();
+
+            if (int.TryParse(lines[0], out int points))
+            {
+                _pointsTotal = points;
+            }
+            for (int i = 1; i < lines.Length; i++)
+            {
+                string[] parts = lines[i].Split('#');
+                string type = parts[0];
+
+                switch (type)
+                {
+                    case "simple":
+                        SimpleGoal loadsimp = new SimpleGoal(parts[1],parts[2],int.Parse(parts[3]),bool.Parse(parts[4]));
+                        goals.Add(loadsimp);
+                        break;
+                    case "eternal":
+                        EternalGoal loadete = new EternalGoal(parts[1],parts[2],int.Parse(parts[3]),bool.Parse(parts[4]));
+                        goals.Add(loadete);
+                        break;
+                    case "checklist":
+                        Checklist loadcheck = new Checklist(parts[1],parts[2],int.Parse(parts[3]),bool.Parse(parts[4]),int.Parse(parts[5]),int.Parse(parts[6]),int.Parse(parts[7]));
+                        goals.Add(loadcheck);
+                        break;
+                    default:
+                        Console.WriteLine("\n--------------------------------------------------------------------\nType not found\n--------------------------------------------------------------------\n");
+                        break;
+                }
+            }
+        }
 
     }
         public void AddPointsTotal(int num)
@@ -63,7 +116,7 @@ class Goals
     public void RecordGoalEvent()
     {
         DisplayGoals();
-        Console.Write("Wich Goal did you accomplish? ");
+        Console.Write("Which goal did you accomplish? ");
         string read = Console.ReadLine();
 
 
