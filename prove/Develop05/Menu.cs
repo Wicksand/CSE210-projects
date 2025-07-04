@@ -5,7 +5,6 @@ using Microsoft.VisualBasic;
 
 class Menu
 {
-    private int _score = 0;
     private int _input = 0;
     new Goals myGoals = new Goals();
 
@@ -18,8 +17,7 @@ class Menu
     }
     private int DisplayMenu()
     {
-        
-        Console.WriteLine($"\n\nYou have {_score} points\n");
+        Console.WriteLine($"\n\nYou have {myGoals.GetPointsTotal()} points\n");
         Console.WriteLine("Menu Options:\n  1.  Create New Goal\n  2.  List Goals\n  3.  Save Goals\n  4.  Load Goals\n  5.  Record Event\n  6.  Quit");
         Console.Write("Select a choice from the menu: ");
 

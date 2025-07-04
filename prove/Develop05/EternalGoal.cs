@@ -1,6 +1,7 @@
 class EternalGoal : BaseGoal
 {
     private int _completions;
+
     public EternalGoal()
     {
         SetType("eternal");
@@ -9,9 +10,9 @@ class EternalGoal : BaseGoal
         setPoints();
         SetGoal();
     }
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-
+        return 0;
     }
 
     public override string SetGoal()

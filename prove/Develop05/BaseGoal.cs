@@ -73,6 +73,7 @@ abstract class BaseGoal
     {
         return _type;
     }
+
     public virtual string ConvertToTextScreen()
     {
         return $"{GetType()}#{GetName()}#{GetDescription()}#{GetPoints()}#{GetStatus()}";
@@ -82,7 +83,7 @@ abstract class BaseGoal
     {
         return "";
     }
-    public abstract void RecordEvent();
+    public abstract int RecordEvent();
 
     public abstract string SetGoal();
 

@@ -1,10 +1,13 @@
 using System.Data;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 
 class Goals
 {
     private string _filename;
     private List<BaseGoal> goals = new List<BaseGoal>();
+
+     private int _pointsTotal = 0;
 
     public Goals()
     {
@@ -13,9 +16,11 @@ class Goals
     public void DisplayGoals()
     {
         int count = 1;
+        Console.WriteLine();
         foreach (BaseGoal goal in goals)
         {
             string check;
+            string end;
             if (goal.GetStatus())
             {
                 check = "[x]";
@@ -25,7 +30,16 @@ class Goals
                 check = "[ ]";
             }
 
-            Console.WriteLine($"{count}. {check} {goal.SetGoal()}");
+            if (goal is Checklist checklist)
+            {
+                end = $" -- Currently completed: {checklist.GetTaskCount()}/{checklist.GetTaskGoal()}";
+            }
+            else
+            {
+                end = "";
+            }
+
+            Console.WriteLine($"{count}. {check} {goal.GetName()} ({goal.GetDescription()}){end}");
             count++;
         }
     }
@@ -33,6 +47,15 @@ class Goals
     {
 
     }
+        public void AddPointsTotal(int num)
+    {
+        _pointsTotal += num;
+    }
+    public int GetPointsTotal()
+    {
+        return _pointsTotal;
+    }
+
     public void AddGoal(BaseGoal goal)
     {
         goals.Add(goal);
@@ -46,7 +69,11 @@ class Goals
 
         if (int.TryParse(read, out int count) && count > 0 && count <= goals.Count)
         {
-            goals[count - 1].RecordEvent();
+            // goals[count - 1].RecordEvent();
+            // AddPointsTotal(goals.RecordEvent());
+            BaseGoal goal = goals[count - 1];
+            int reward = goal.RecordEvent();
+            AddPointsTotal(reward);
         }
         else
         {
