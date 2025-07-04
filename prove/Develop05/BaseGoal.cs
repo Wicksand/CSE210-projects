@@ -35,29 +35,56 @@ abstract class BaseGoal
         }
         _points = points;
     }
+    public int GetPoints()
+    {
+        return _points;
+    }
     public void SetDescription()
     {
         Console.Write("What is a short description of it?");
         _description = Console.ReadLine();
+    }
+    public string GetDescription()
+    {
+        return _description;
     }
     public void SetName()
     {
         Console.Write("What is the name of your Goal?");
         string name = Console.ReadLine();
     }
-    public abstract void RecordEvent();
-
-    public abstract string SetGoal();
-
-    public abstract void GetGoal();
-
+    public string GetName()
+    {
+        return _name;
+    }
+    public void SetStatus(bool status)
+    {
+        _status = status;
+    }
+    public bool GetStatus()
+    {
+        return _status;
+    }
+    public void SetType(string type)
+    {
+        _type = type;
+    }
+    public string GetType()
+    {
+        return _type;
+    }
     public virtual string ConvertToTextScreen()
     {
-        return "";
+        return $"{GetType()}#{GetName()}#{GetDescription()}#{GetPoints()}#{GetStatus()}";
     }
 
     public virtual string ConvertToTextFile()
     {
         return "";
     }
+    public abstract void RecordEvent();
+
+    public abstract string SetGoal();
+
+    public abstract void GetGoal();
 }

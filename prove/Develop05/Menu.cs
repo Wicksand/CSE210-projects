@@ -84,6 +84,7 @@ class Menu
                         waiting = false;
                         break;
                     case 2: // eternal
+                        EternalGoal myEternal = new EternalGoal();
                         waiting = false;
                         break;
                     case 3: // checklist

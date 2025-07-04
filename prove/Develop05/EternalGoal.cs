@@ -1,21 +1,24 @@
-class SimpleGoal : BaseGoal
+class EternalGoal : BaseGoal
 {
-    public SimpleGoal()
+
+    public EternalGoal()
     {
-        SetType("simple");
-        SetStatus(false);
+        SetType("eternal");
         SetName();
         SetDescription();
         setPoints();
+        SetGoal();
     }
     public override void RecordEvent()
     {
-        Console.WriteLine();
+
     }
+
     public override string SetGoal()
     {
-        return $"{GetType()}#{GetName()}#{GetDescription()}#{GetPoints()}#{GetStatus()}";
+        return "";
     }
+
     public override void GetGoal()
     {
         
