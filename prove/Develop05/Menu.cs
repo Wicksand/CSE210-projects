@@ -80,13 +80,7 @@ class Menu
                 {
 
                     case 1: // simple
-                        Goal myGoal = new Goal();
-                        Console.Write("What is the name of your Goal?");
-                        string name = Console.ReadLine();
-                        Console.Write("What is a short description of it?");
-                        string description = Console.ReadLine();
-                        myGoal.GetPoints();
-
+                        SimpleGoal mySimple = new SimpleGoal();
                         waiting = false;
                         break;
                     case 2: // eternal

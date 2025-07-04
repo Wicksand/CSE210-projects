@@ -1,11 +1,50 @@
-using System.Runtime.CompilerServices;
+using System.Dynamic;
 
 abstract class BaseGoal
 {
-    private string _goal;
     private int _points;
-    private string _goalTitle;
+    private string _name;
+    private string _description;
+    private bool _status;
+    private string _type;
 
+
+    public BaseGoal()
+    {
+
+    }
+
+    public void setPoints()
+    {
+        bool numCheck = true;
+        int points = 0;
+        while (numCheck)
+        {
+            Console.Write("What is the amount of points associated with this goal?");
+            string testpoint = Console.ReadLine();
+
+            if (!int.TryParse(testpoint, out points))
+            {
+                Console.WriteLine("\n--------------------------------------------------------------------\nInvalid input, Please enter a number\n--------------------------------------------------------------------\n");
+                numCheck = true;
+            }
+            else
+            {
+                numCheck = false;
+            }
+        }
+        _points = points;
+    }
+    public void SetDescription()
+    {
+        Console.Write("What is a short description of it?");
+        _description = Console.ReadLine();
+    }
+    public void SetName()
+    {
+        Console.Write("What is the name of your Goal?");
+        string name = Console.ReadLine();
+    }
     public abstract void RecordEvent();
 
     public abstract string SetGoal();
