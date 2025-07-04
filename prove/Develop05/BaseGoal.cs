@@ -1,4 +1,7 @@
 using System.Dynamic;
+using System.Globalization;
+using System.Reflection.Metadata.Ecma335;
+using System.Security.AccessControl;
 
 abstract class BaseGoal
 {
@@ -14,13 +17,14 @@ abstract class BaseGoal
 
     }
 
+    //--------------------------------------Getters + setters----------------------------------
     public void setPoints()
     {
         bool numCheck = true;
         int points = 0;
         while (numCheck)
         {
-            Console.Write("What is the amount of points associated with this goal?");
+            Console.Write("What is the amount of points associated with this goal? ");
             string testpoint = Console.ReadLine();
 
             if (!int.TryParse(testpoint, out points))
@@ -41,7 +45,7 @@ abstract class BaseGoal
     }
     public void SetDescription()
     {
-        Console.Write("What is a short description of it?");
+        Console.Write("What is a short description of it? ");
         _description = Console.ReadLine();
     }
     public string GetDescription()
@@ -50,7 +54,7 @@ abstract class BaseGoal
     }
     public void SetName()
     {
-        Console.Write("What is the name of your Goal?");
+        Console.Write("What is the name of your Goal? ");
         _name = Console.ReadLine();
     }
     public string GetName()
@@ -73,15 +77,16 @@ abstract class BaseGoal
     {
         return _type;
     }
+    //------------------------------------------------------------------------------------------------------------
 
     public virtual string ConvertToTextScreen()
     {
-        return $"{GetType()}#{GetName()}#{GetDescription()}#{GetPoints()}#{GetStatus()}";
+        return $"";
     }
 
     public virtual string ConvertToTextFile()
     {
-        return "";
+        return $"{GetType()}#{GetName()}#{GetDescription()}#{GetPoints()}#{GetStatus()}";
     }
     public abstract int RecordEvent();
 

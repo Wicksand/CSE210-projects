@@ -63,7 +63,7 @@ class Goals
     public void RecordGoalEvent()
     {
         DisplayGoals();
-        Console.WriteLine("Wich Goal did you accomplish? ");
+        Console.Write("Wich Goal did you accomplish? ");
         string read = Console.ReadLine();
 
 
@@ -72,8 +72,8 @@ class Goals
             // goals[count - 1].RecordEvent();
             // AddPointsTotal(goals.RecordEvent());
             BaseGoal goal = goals[count - 1];
-            int reward = goal.RecordEvent();
-            AddPointsTotal(reward);
+            AddPointsTotal(goal.RecordEvent());
+            Console.WriteLine($"You now have {GetPointsTotal()} points.");
         }
         else
         {
@@ -82,7 +82,7 @@ class Goals
     }
     private void GetFileName()
     {
-        Console.WriteLine("What is the filenamefor the goal file? ");
+        Console.Write("What is the file name for the goal file? ");
         _filename = Console.ReadLine();
     }
 }

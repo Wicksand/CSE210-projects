@@ -89,6 +89,8 @@ class Menu
                         waiting = false;
                         break;
                     case 3: // checklist
+                        Checklist myChecklist = new Checklist();
+                        myGoals.AddGoal(myChecklist);
                         waiting = false;
                         break;
                     default:

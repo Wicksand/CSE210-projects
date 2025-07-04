@@ -9,10 +9,18 @@ class EternalGoal : BaseGoal
         SetDescription();
         setPoints();
         SetGoal();
+        _completions = 0;
     }
+    public void AddCompletions()
+    {
+        
+    }
+
     public override int RecordEvent()
     {
-        return 0;
+        Console.WriteLine($"Congratulations! You have earned {GetPoints()} points.");
+        return GetPoints();
+        
     }
 
     public override string SetGoal()
