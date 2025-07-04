@@ -51,7 +51,7 @@ abstract class BaseGoal
     public void SetName()
     {
         Console.Write("What is the name of your Goal?");
-        string name = Console.ReadLine();
+        _name = Console.ReadLine();
     }
     public string GetName()
     {

@@ -7,6 +7,7 @@ class Menu
 {
     private int _score = 0;
     private int _input = 0;
+    new Goals myGoals = new Goals();
 
     public Menu()
     {
@@ -37,7 +38,7 @@ class Menu
                 DisplayGoalMenu();
                 break;
             case 2: // list goals
-                Console.WriteLine("It worked");
+                myGoals.DisplayGoals();
                 break;
             case 3:// save goals
                 Console.WriteLine("It worked");
@@ -47,7 +48,7 @@ class Menu
 
                 break;
             case 5: // record event
-                Console.WriteLine("It worked");
+                myGoals.RecordGoalEvent();
 
                 break;
             case 6: //quit
@@ -81,10 +82,12 @@ class Menu
 
                     case 1: // simple
                         SimpleGoal mySimple = new SimpleGoal();
+                        myGoals.AddGoal(mySimple);
                         waiting = false;
                         break;
                     case 2: // eternal
                         EternalGoal myEternal = new EternalGoal();
+                        myGoals.AddGoal(myEternal);
                         waiting = false;
                         break;
                     case 3: // checklist

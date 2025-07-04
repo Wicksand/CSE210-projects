@@ -1,6 +1,6 @@
 class EternalGoal : BaseGoal
 {
-
+    private int _completions;
     public EternalGoal()
     {
         SetType("eternal");
