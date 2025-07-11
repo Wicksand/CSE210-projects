@@ -24,12 +24,16 @@ class Video
     }
     public string GetVideo()
     {
-        return $"Video Title: {title_}\nAuthor: {author_}\nLength: {length_} seconds\nNumber of Comments: {comments_.Count}";
+        return $"Video Title: {title_}\nAuthor: {author_}\nLength: {length_} seconds\nNumber of Comments: {GetNumberComm()}";
     }
     public void AddComment(string commenter, string comment)
     {
         Comment commentobj = new Comment(commenter, comment);
         comments_.Add(commentobj);
+    }
+    private int GetNumberComm()
+    {
+        return comments_.Count;
     }
     public List<Comment> GetComments()
     {
