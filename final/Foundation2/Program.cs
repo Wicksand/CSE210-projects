@@ -13,7 +13,7 @@ class Program
         };
         Order order1 = new Order(cust1, products1);
 
-        Customer cust2 = new Customer("Timmy Bob", "345 Normal Blv", "East Vally", "Vancuvor", "Cannada");
+        Customer cust2 = new Customer("Timmy Bob", "345 Normal Blv", "East Vally", "Vancuvor", "Canada");
         List<Product> products2 = new List<Product>()
         {
             new Product("2 Left Shoes", "C123", 15.00f, 6),
