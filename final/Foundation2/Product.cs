@@ -3,11 +3,11 @@ using System.Data;
 class Product
 {
     private string name_;
-    private int id_;
+    private string id_;
     private float costPer_;
     private int quantity_;
     public Product() {}
-    public Product(string name, int id, float costPer, int quantity)
+    public Product(string name, string id, float costPer, int quantity)
     {
         name_ = name;
         id_ = id;
@@ -24,7 +24,7 @@ class Product
     {
         return name_;
     }
-    public int GetId()
+    public string GetId()
     {
         return id_;
     }
