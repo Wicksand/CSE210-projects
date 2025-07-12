@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation2 World!");
+        Address add = new Address("3369 Arlington Ave","Eugene" ,"OR", "USA");//(name, ID, price, quantity)
+        Console.WriteLine(add.Display());
     }
 }

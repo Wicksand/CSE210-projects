@@ -11,7 +11,6 @@ class Comment
     {
         commenter_ = commenter;
         comment_ = comment;
-        //$"{splitcomment[1]}:\n{splitcomment[2]}"
     }
     public string GetComment()
     {
