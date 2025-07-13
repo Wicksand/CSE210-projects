@@ -1,0 +1,7 @@
+class LectureEvent
+{
+    public LectureEvent()
+    {
+        
+    }
+}
