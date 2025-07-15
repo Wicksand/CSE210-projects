@@ -1,4 +1,4 @@
-class OutdoorEvent
+class OutdoorEvent : Event
 {
     public OutdoorEvent()
     {

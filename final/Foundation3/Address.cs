@@ -1,8 +1,8 @@
 using System.Runtime.InteropServices;
 
-class ReceptionEvent
+class Address
 {
-    public ReceptionEvent()
+    public Address()
     {
         
     }

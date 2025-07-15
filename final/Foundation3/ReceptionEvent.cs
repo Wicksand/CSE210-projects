@@ -1,7 +1,7 @@
-class ReceptionEvent
+class ReceptionEvent : Event
 {
     public ReceptionEvent()
     {
-        
+
     }
 }

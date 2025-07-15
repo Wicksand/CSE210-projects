@@ -1,4 +1,4 @@
-class LectureEvent
+class LectureEvent : Event
 {
     public LectureEvent()
     {
