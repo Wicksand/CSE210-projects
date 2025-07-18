@@ -1,0 +1,5 @@
+class SwimmingActivity
+{
+    public SwimmingActivity() { }
+    
+}
