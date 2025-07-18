@@ -7,7 +7,7 @@ class OutdoorEvent : Event
         weather_ = weather;
     }
     public string fullOutdoor() {
-        return Full($"   Weather Forecast:{weather_}");
+        return Full($"   Weather Forecast: {weather_}");
     }
     
 }
