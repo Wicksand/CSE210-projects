@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.ComponentModel.Design;
 
 class Event
@@ -7,21 +8,28 @@ class Event
     private string date_;
     private string time_;
     private Address address_;
+    private string typeEvent_;
+
     public Event() { }
-    public Event(string title, string description, string date, string time, Address address)
+    public Event(string title, string description, string date, string time, Address address, string typeEvent)
     {
         title_ = title;
         description_ = description;
         date_ = date;
         time_ = time;
         address_ = address;
+        typeEvent_ = typeEvent;
     }
-    protected void standard()
+    public string Standard()
     {
-        Console.WriteLine($"Standard Details:\nTitle: {title_}\nDescription: {description_}\nDate: {date_}\nStart Time: {time_} \nLocation: {address_}");
+        return $"Standard Details:\n   Title: {title_}\n   Description: {description_}\n   Date: {date_}\n   Start Time: {time_} \n   Location: {address_.Display()}";
     }
-    protected void Full(string eventType, string specification)
+    protected string Full(string specification)
     {
-        Console.WriteLine($"Full Details:\nEvent Type: {eventType}\nTitle: {title_}\nDescription: {description_}\nDate: {date_}\nStart Time: {time_} \nLocation: {address_}\n{specification}");
+        return $"Full Details:\n   Event Type: {typeEvent_}\n   Title: {title_}\n   Description: {description_}\n   Date: {date_}\n   Start Time: {time_} \n   Location: {address_.Display()}\n{specification}";
+    }
+    public string Short()
+    {
+        return $"Short Details:\n   Event Type: {typeEvent_}\n   Title: {title_}\n   Date: {date_}";
     }
 }
