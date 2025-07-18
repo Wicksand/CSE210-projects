@@ -1,4 +1,4 @@
-class SwimmingActivity
+class SwimmingActivity : Activity
 {
     public SwimmingActivity() { }
     
