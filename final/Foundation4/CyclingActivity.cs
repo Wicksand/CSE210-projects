@@ -2,13 +2,13 @@ class CyclingActivity : Activity
 {
     private float speed_;
     public CyclingActivity() { }
-    public CyclingActivity(string date, int time, float Speed): base(date, time, "Cycling")
+    public CyclingActivity(string date, float time, float speed): base(date, time, "Cycling")
     {
-        speed_ = Speed;
+        speed_ = speed;
     }
     public override float GetDistance()
     {
-        return speed_ * GetTime(); 
+        return (speed_ * GetTime())/60f; 
     }
     public override float GetSpeed()
     {

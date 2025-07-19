@@ -3,10 +3,10 @@ using System.Dynamic;
 abstract class Activity
 {
     private string date_;
-    private int time_;
+    private float time_;
     private string type_;
     public Activity() { }
-    public Activity(string date, int time, string type)
+    public Activity(string date, float time, string type)
     {
         date_ = date;
         time_ = time;
@@ -15,9 +15,9 @@ abstract class Activity
 
     public virtual string GetSummary()
     {
-        return $"{date_} {type_} ({time_} min)- Distance: {GetDistance():F2} miles, Speed: {GetSpeed():F2} mph, Pace: {GetPace():F2} min per mile.";
+        return $"{date_} {type_} ({time_} min)- Distance: {GetDistance():F1} miles, Speed: {GetSpeed():F1} mph, Pace: {GetPace():F1} min per mile.";
     }
-    public int GetTime()
+    public float GetTime()
     {
         return time_;
     }
